@@ -1,0 +1,18 @@
+<section>
+	<h1>SHU SHU SHU</h1>
+	<ul>
+		<li ng-repeat="order in $ctrl.orderList | orderBy:id">
+			<span>Order nº {{order.id}}</span>
+			<span>Customer name: {{order['customer-name']}}</span>
+			<ul>
+				<li ng-repeat="item in order.items">
+					<span>{{item.name}}</span>
+					<span>Qty: {{item.quantity}}</span>
+					<span>Price: {{item['unit-price']}}</span>
+					<span>Total: {{item.total}}</span>
+				</li>
+			</ul>
+			<span>Total: {{order.total}}</span>
+		</li>
+	</ul>
+</section>

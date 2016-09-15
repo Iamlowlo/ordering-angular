@@ -1,0 +1,3 @@
+<ul>
+	<li ng-repeat="link in $ctrl.linkList | orderBy:'order'"><a ui-sref="{{link.state}}">{{link.label}}</a></li>
+</ul>
