@@ -1,6 +1,6 @@
 export const plainList = {
   template: require('./plainList.html'),
-  controller: function () {
+  controller: () => {
   },
   bindings: {
     elements: '<'

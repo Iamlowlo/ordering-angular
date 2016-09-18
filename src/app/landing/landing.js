@@ -1,6 +1,6 @@
 export const landing = {
   template: require('./landing.html'),
-  controller: function($scope) {
+  controller() {
     this.hello = 'Hello World!';
   }
 };

@@ -1,9 +1,10 @@
 <section>
-	<h1>SHU SHU SHU</h1>
+	<h1>Order List</h1>
 	<ul>
 		<li ng-repeat="order in $ctrl.orderList | orderBy:id">
-			<span>Order nº {{order.id}}</span>
+			<a ui-sref="orderDetail({orderId: order.id})"><span>Order nº {{order.id}}</span>
 			<span>Customer name: {{order['customer-name']}}</span>
+			</a>
 			<ul>
 				<li ng-repeat="item in order.items">
 					<span>{{item.name}}</span>

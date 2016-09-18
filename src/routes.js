@@ -15,6 +15,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       },
       component: 'plainList',
       data: {
+        mainNav: true,
         label: 'Product list',
         order: 2
       }
@@ -23,6 +24,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/',
       component: 'landing',
       data: {
+        mainNav: true,
         label: 'Index',
         order: 0
       }
@@ -31,6 +33,7 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
       url: '/orderList',
       component: 'orderList',
       data: {
+        mainNav: true,
         label: 'Order list',
         order: 1
       }
@@ -43,6 +46,15 @@ function routesConfig($stateProvider, $urlRouterProvider, $locationProvider) {
         }
       },
       component: 'plainList',
+      data: {
+        mainNav: true,
+        label: 'Customer list',
+        order: 3
+      }
+    })
+    .state('orderDetail', {
+      url: '/orderDetail/:orderId',
+      component: 'orderDetail',
       data: {
         label: 'Customer list',
         order: 3

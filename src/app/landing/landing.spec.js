@@ -5,7 +5,7 @@ import {landing} from './landing';
 describe('landing component', () => {
   beforeEach(() => {
     angular
-      .module('fountainHello', ['app/landing.html'])
+      .module('fountainHello', ['app/landing/landing.html'])
       .component('fountainHello', landing);
     angular.mock.module('fountainHello');
   });

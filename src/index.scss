@@ -1,3 +1,28 @@
+@import './app/styles/_variables.scss';
+
+*{
+	box-sizing: border-box;
+}
 body {
   background-color: lightgrey;
 }
+
+.btn{
+	background-color: $color_1;
+	color: $polite_white;
+	cursor: pointer;
+	display: inline-block;
+	min-height: 1.2em;
+	min-width: 1.2em;
+	padding: 0.2em 0.5em;
+	text-align: center;
+}
+
+.hidden{
+	display: none !important;
+	visibility: none !important;
+	opacity: 0 !important;
+}
+
+@import './app/orderDetail/orderDetail.scss';
+@import './app/productPopUp/productPopUp.scss';

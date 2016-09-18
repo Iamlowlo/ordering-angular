@@ -1,0 +1,39 @@
+<section class="order_detail">
+	<h1>Order Detail</h1>
+	<span>Customer: <strong>{{$ctrl.order['customer-name']}}</strong></dt>
+	<div class="cta_add_a_product">
+		Do you want to add another product? <span class="btn" ng-click="$ctrl.addProductToOrder($event)">+</span>
+		<product-pop-up 
+			pop-up-state="$ctrl.productPopUpState"
+			pop-up-coords="$ctrl.popUpCoords"
+			order-products="$ctrl.order.items"
+			order-products-qty="$ctrl.order.items.length"
+			on-order-total="$ctrl.orderTotalCalculate"></product-pop-up>
+	</div>
+	<table class="product_table order_detail-product_table">
+		<thead class="product_table-heading">
+			<th>Products</th>
+			<th>Unit Price</th>
+			<th class="product_table-btn_cell">Qty.</th>
+			<th>Total per product</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="product in $ctrl.order.items">
+				<td>{{product.name}}</td>
+				<td>{{product['unit-price']}}</td>
+				<td class="product_table-btn_cell product_table-qty_cell">{{product.quantity}}
+					<span class="btn product_table-qty_cell-add_btn" ng-click="$ctrl.addProductUnit(product['product-id'])">+</span>
+					<span class="btn product_table-qty_cell-subtract_btn" ng-click="$ctrl.subtractProductUnit(product['product-id'])">-</span>
+				</td>
+				<td>{{product.total}} <span class="btn" ng-click="$ctrl.removeProductFromOrder(product['product-id'])">RM</span></td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan=3>Total</td>
+				<td>{{$ctrl.order.total}}</td>
+			</tr>
+		</tfoot>
+	</table>
+	<span class="btn" ng-click="$ctrl.placeOrder()">Complete the order</span>
+</section>

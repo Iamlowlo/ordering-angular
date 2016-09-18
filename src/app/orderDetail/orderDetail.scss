@@ -1,0 +1,37 @@
+.cta_add_a_product{
+	margin-bottom: 2em;
+}
+
+.product_table{
+	text-align: right;
+	width: 100%;
+	td, th{
+		&:first-child{
+			text-align: left;
+		}
+	}
+
+	&-btn_cell{
+		height: 1.5em;
+		padding-right: 2.5em;
+		position: relative;
+		.btn{
+			height: 1.5em;
+			position: absolute;
+			right: 0;
+			top: 0;
+			width: 1.5em;
+		}
+	}
+
+	&-qty_cell{
+		height: 3em;
+		&-add_btn{
+		}
+		&-subtract_btn{
+			background-color: $color_2;
+			bottom: 0;
+			top: auto !important;
+		}
+	}
+}
