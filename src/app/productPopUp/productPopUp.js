@@ -9,11 +9,10 @@ export const productPopUp = {
       }
       if (changes.popUpCoords && changes.popUpCoords.currentValue) {
         const coords = changes.popUpCoords.currentValue;
-        const component = $document.find('.pop_up-product')[0];
         ctrl.position = {
-          x: (coords.width/2) + coords.left,
+          x: (coords.width / 2) + coords.left,
           y: coords.height + coords.top
-        }
+        };
       }
     };
 
