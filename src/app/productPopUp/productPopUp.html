@@ -1,6 +1,6 @@
-<article class="pop_up pop_up-product" ng-class="{ 'hidden' : !$ctrl.popUpState.opened}">
+<article class="pop_up pop_up-product" ng-class="{ 'hidden' : !$ctrl.popUpState.opened}" ng-style="{'top': $ctrl.position.y+'px', 'left': $ctrl.position.x+'px'}">
 	<h1>Available products</h1>
-	<span class="btn btn-close" ng-click="$ctrl.closePopUp()">X</span>
+	<span class="btn btn-close" ng-click="$ctrl.closePopUp()"><span class="fontawesome-remove"></span></span>
 	<table class="product_table">
 		<thead>
 			<th>Description</th>
@@ -11,7 +11,7 @@
 			<tr ng-repeat="product in $ctrl.availableProducts">
 				<td>{{product.description}}</td>
 				<td>{{product.category}}</td>
-				<td class="product_table-btn_cell" ng-click="$ctrl.addProduct(product.id)">{{product.price}} <span class="btn">+</span></td>
+				<td class="product_table-btn_cell" ng-click="$ctrl.addProduct(product.id)">{{product.price}} <span class="btn"><span class="fontawesome-plus"></span></span></td>
 			</tr>
 		</tbody>
 	</table>

@@ -1,0 +1,19 @@
+.plain_list{
+	li{
+		display: table;
+		padding-bottom: 1em;
+	}
+	&-row{
+		display: table-row;
+	}
+	&-term{
+		display: table-cell;
+		font-weight: bold;
+		text-align: right;
+		text-transform: capitalize;
+	}
+	&-value{
+		display: table-cell;
+		padding-left: 0.6em;
+	}
+}

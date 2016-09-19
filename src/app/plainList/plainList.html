@@ -1,5 +1,11 @@
-<ul>
-	<li ng-repeat="element in $ctrl.elements">
-		<span ng-repeat="(key, value) in element">{{key}} - {{value}} / </span>
-	</li>
-</ul>
+<section>
+	<h1>{{$ctrl.title}}</h1>
+	<ul class="plain_list">
+		<li ng-repeat="element in $ctrl.elements">
+			<div class="plain_list-row" ng-repeat="(key, value) in element">
+				<span class="plain_list-term">{{key}}</span>
+				<span class="plain_list-value">{{value}}</span>
+			</div>
+		</li>
+	</ul>
+</section>

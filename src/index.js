@@ -19,8 +19,8 @@ export const app = 'orderingApp';
 angular
   .module(app, ['ui.router'])
   .config(routesConfig)
-  .service('fakeApiService', ['$q', fakeApiService] )
-  .service('orderInfoService', ['$q', 'fakeApiService', orderInfoService] )
+  .service('fakeApiService', ['$q', fakeApiService])
+  .service('orderInfoService', ['$q', 'fakeApiService', orderInfoService])
   .component('landing', landing)
   .component('mainNavigation', mainNavigation)
   .component('plainList', plainList)

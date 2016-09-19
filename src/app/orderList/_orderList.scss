@@ -1,0 +1,11 @@
+.order_list{
+	&-unit{
+		padding-bottom: 1.5em;
+	}
+	#{&} &-detail_link{
+		color: $color_1;
+		&:hover{
+			color: $color_1_dark;
+		}
+	}
+}

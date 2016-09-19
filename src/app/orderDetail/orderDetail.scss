@@ -17,10 +17,14 @@
 		position: relative;
 		.btn{
 			height: 1.5em;
+			padding: 0;
 			position: absolute;
 			right: 0;
 			top: 0;
 			width: 1.5em;
+			[class*="fontawesome-"]{
+				font-size: 0.75em;
+			}
 		}
 	}
 

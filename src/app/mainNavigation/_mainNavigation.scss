@@ -1,0 +1,21 @@
+#main_navigation{
+  background-color: rgba($color_1,0.5);
+  margin: 0 -1.5em;
+  padding: 0 1.5em;
+  li{
+    display: inline-block;
+    a{
+      background-color: $color_1;
+      color: $polite_white;
+      display: block;
+      padding: 0.6em 0.75em;
+      &:hover{
+        box-shadow: $color_1_dark 0 -0.3em 0 inset;
+      }
+      &.active{
+        background-color: $color_2;
+        box-shadow: $color_2_dark 0 -0.3em 0 inset;
+      }
+    }
+  }
+}

@@ -1,14 +1,19 @@
 export const productPopUp = {
   template: require('./productPopUp.html'),
-  controller(fakeApiService) {
+  controller(fakeApiService, $document) {
     const ctrl = this;
 
     this.$onChanges = function (changes) {
-      if (changes.popUpState && changes.popUpState.currentValue.opened) {
+      if ((changes.popUpState && changes.popUpState.currentValue.opened) || changes.orderProductsQty) {
         ctrl.getAvailableProducts();
       }
-      if (changes.orderProductsQty) {
-        ctrl.getAvailableProducts();
+      if (changes.popUpCoords && changes.popUpCoords.currentValue) {
+        const coords = changes.popUpCoords.currentValue;
+        const component = $document.find('.pop_up-product')[0];
+        ctrl.position = {
+          x: (coords.width/2) + coords.left,
+          y: coords.height + coords.top
+        }
       }
     };
 
@@ -27,7 +32,7 @@ export const productPopUp = {
         "unit-price": newProduct.price
       });
       ctrl.availableProducts.splice(_.indexOf(ctrl.availableProducts, newProduct), 1);
-      ctrl.onOrderTotal();
+      ctrl.onOrderTotal()();
     };
 
     this.getAvailableProducts = function () {

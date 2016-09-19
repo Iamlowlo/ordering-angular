@@ -1,28 +1,76 @@
 @import './app/styles/_variables.scss';
+@import url(http://weloveiconfonts.com/api/?family=fontawesome);
+
+/* fontawesome */
+[class*="fontawesome-"]:before {
+  font-family: 'FontAwesome', sans-serif;
+}
 
 *{
-	box-sizing: border-box;
+  box-sizing: border-box;
+}
+html,
+body,
+h1, h2, h3, h4, h5, h6,
+ul, ol, li {
+  margin:0;
+  padding: 0;
+}
+html{
+  min-height: 100%;
+}
+h1, h2, h3, h4, h5, h6{
+  font-family: Montserrat, "Arial Black", Arial, sans-serif;
+}
+h1{
+  padding-bottom: 0.5em;
+}
+ul, ol, li{
+  list-style: none;
 }
 body {
-  background-color: lightgrey;
+  font-family: 'Open Sans', Arial, sans-serif;
+  color: $polite_black;
 }
-
+a{
+  text-decoration: none;
+  &:visited{
+    color: $polite_black;
+  }
+}
+ui-view,
+landing,
+order-detail,
+order-list,
+plain-list,
+product-pop-up{
+  display: block;
+}
+ui-view{
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1.5em;
+}
 .btn{
-	background-color: $color_1;
-	color: $polite_white;
-	cursor: pointer;
-	display: inline-block;
-	min-height: 1.2em;
-	min-width: 1.2em;
-	padding: 0.2em 0.5em;
-	text-align: center;
+  background-color: $color_1;
+  color: $polite_white;
+  cursor: pointer;
+  display: inline-block;
+  min-height: 1.2em;
+  min-width: 1.2em;
+  padding: 0.2em 0.5em;
+  text-align: center;
 }
 
 .hidden{
-	display: none !important;
-	visibility: none !important;
-	opacity: 0 !important;
+  display: none !important;
+  visibility: none !important;
+  opacity: 0 !important;
 }
 
+@import './app/styles/header.scss';
+@import './app/plainList/plainList.scss';
+@import './app/orderList/orderList.scss';
 @import './app/orderDetail/orderDetail.scss';
+@import './app/mainNavigation/mainNavigation.scss';
 @import './app/productPopUp/productPopUp.scss';

@@ -2,7 +2,7 @@ export const mainNavigation = {
   template: require('./mainNavigation.html'),
   controller($state) {
     const cleanStates = _.filter($state.router.stateRegistry.states, function (state) {
-      return !(_.isUndefined(state.data) || _.isUndefined(state.data.mainNav));
+      return state.data && state.data.mainNav;
     });
 
     this.linkList = _.map(cleanStates, function (item) {
